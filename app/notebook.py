@@ -31,5 +31,20 @@ class Note:
 
 class Notebook:
     def __init__(self):
+        self.notes: list[Note] = []
 
+
+    def add_note(self, title: str, text: str, importance: str, ) -> int:
+
+        #genereamos el nuevo codigo: numero de notas existentes + 1
+        new_codigo = len(self.notes)
+
+        #Creamos nueva nota
+        new_note = Note(new_codigo, title, text, importance)
+        #agregamos a la lista de notas
+        self.notes.append(new_note)
+        return new_codigo
+
+
+    def note (self, notes:list[Note]):
 
